@@ -1,0 +1,87 @@
+ @font-face { font-family: NightStillComes; src: url('NightStillComes_mine_final_sample.otf');}
+ @font-face { font-family: Bellota; src: url('Bellota-Regular.otf');}
+
+body {
+	background-image: url("/stylesheets/images/yellow_bg.png");
+	background-repeat: repeat;
+}
+
+.orange {
+	background-color: rgba(240, 85, 0, 0.49);
+	width: 100%;
+    height: 70px;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+}
+	
+.brown {
+	background-color: rgba(59, 25, 10, 0.53);
+	width: 100%;
+    height: 6px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+
+.header {
+    font-family: NightStillComes, serif;
+	color: #FFF;
+	position: relative;
+	font-size: 3.5em;
+	margin-top: 5px;
+    margin-left: 50px;
+}
+
+	
+.cookies {
+	background-image: url("/stylesheets/images/cookie.png");
+	background-repeat: repeat-y;
+	width: 340px;
+	height: 100%;
+	position: absolute;
+    right: 0px;
+	z-index: -1;
+}
+
+.bar {
+	display: inline-block;
+	margin-left: -100px;
+    margin-top: 90px;
+}
+
+
+
+.bar p {
+	padding: 5px 5px 5px 150px;
+}
+
+.text {
+	color: rgba(59, 25, 10, 1);
+}
+
+.titles {
+	color: rgba(209, 0, 0, 1);
+	font-size: 1.2em;
+}
+
+p {
+	font-family: Bellota, serif;
+	margin: 0px;
+}
+
+.links {	
+	bottom: 0px;
+	color: rgba(209, 0, 0, 1);
+	font-size: 2em;
+	text-align: center;
+	display: block;
+	margin: 30px;
+}
+
+.content {
+	vertical-align: top;
+	display: inline-block;
+	margin-top: 90px;
+	width: 70%;
+}
