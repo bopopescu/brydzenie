@@ -12,37 +12,40 @@
 	<div class="brown"></div>
 	<div class="orange">
         <div>
-            <p class="header">brydzenie</p>
+            <a href="/"><p class="header">brydzenie</p></a>
         </div>
     </div>
-	
-    <div class="cookies"></div>
-
-	<div class="bar">
-	   <p class="text"><strong>pół żartem...</strong></p>
-	   <div class="titles"><p>Jak być patriotą</p></div>
-	   <div class="titles"><p>Pogoń za pięknem</p></div>
-	   <div class="titles"><p>Kochajmy się!</p></div>
-	   <p class="text"><strong>...pół serio</strong></p>
-	   <p class="titles">Biochemia</p>
-	   <p class="titles">Lustro</p>
-	</div>   
- 
-
- <div class="content text">
-    <div id="1" class="Super_Matematyk">
-    {% block content %}
-	{% endblock %}
-    </div>
+    <div class="container">
+        <div class="bar">
+           <p class="text"><strong>pół żartem...</strong></p>
+           <a href="jeden-dzien-z-zycia-polskiej-firmy"><div class="titles"><p>Jeden dzień z życia polskiej firmy</p></div></a>
+           <a href="kochajmy-sie"><div class="titles"><p>Kochajmy się!</p></div></a>
+           <a href="jak-byc-patriota"><div class="titles"><p>Jak być patriotą</p></div></a>
+           <a href="pogon-za-pieknem"><div class="titles"><p>Pogoń za pięknem</p></div></a>
+           <p class="text"><strong>...pół serio</strong></p>
+           <a href="error404"><div class="titles"><p>Lustro</p></div></a>
+           <a href="error404"><div class="titles"><p>Biochemia</p></div></a>
+        </div>   
      
-    <div class="Dyfuzja"></div>
     
- </div>
+        <div id="opo" class="content text">
+           {% block content %}
+           <div class="index">
+               <p>Nierozważny włóczynecie! <br>Witaj w świecie ciastek i słów! <br>Oby nie zwiodła cię cukierkowa szata graficzna tej strony. <br>Raczej pomnij na jej motto:</p><br>
+               <p class="quote">Księgi nie po to są, by w nie wierzyć, lecz by poddawać je badaniu. [...] Trzeba sprawdzić, z jakiej danej oryginalnego doświadczenia zrodziła się litera. Nad literą należy dyskutować, nawet jeśli utajony sens pozostaje słuszny.</p>
+               <br><p style="text-align: right;">Umberto Eco</p>
+           </div>
+           {% endblock %}    
+        </div>
+
     
-    <div class="links">
-        <p><a href="niemieckaprasa">Zostaw po sobie ślad!</a></p>
+        <div class="cookies"></div>
     </div>
-    
+    <!--
+    <div class="links">
+        <p><a href="jak-byc-patriota" class="zostaw-slad">Zostaw po sobie ślad!</a></p>
+    </div>
+    -->
 
 
 </body>

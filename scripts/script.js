@@ -1,21 +1,22 @@
 $(document).ready(function(){
 
-//var orange_width = screen.width - $('.cookies').attr('style').replace('width: ','');
-//$('.orange').css('width', orange_width+'px');
+    if (navigator.userAgent.indexOf("Chrome") > -1){
+        $('.header').css('margin-top','10px');
+    }
+    if (navigator.userAgent.indexOf("Opera") > -1){
+        $('.header').css('margin-top','10px');
+    }
+    
+/*$('.titles').css({'color':'rgba(209, 0, 0, 1)', 'text-decoration':'none'});
 
-
-$('a').css({'color':'rgba(209, 0, 0, 1)', 'text-decoration':'none'});
-
-    $('a').mouseenter(function(){
+    $('.titles').mouseenter(function(){
         $(this).css({'color':'rgba(59, 25, 10, 1)' ,'text-decoration':'underline'});
     });
 
-    $('a').mouseleave(function(){
+    $('.titles').mouseleave(function(){
         $(this).css({'color':'rgba(209, 0, 0, 1)', 'text-decoration':'none'});
     });
-
-  
-  //rgba(59, 25, 10, 1)
+*/
 
     $('.titles').mouseenter(function(){
         $(this).css({'color':'#ffffff' ,'background':'rgba(59, 25, 10, 1)'});
@@ -25,10 +26,4 @@ $('a').css({'color':'rgba(209, 0, 0, 1)', 'text-decoration':'none'});
         $(this).css({'color':'rgba(209, 0, 0, 1)', 'background':'transparent'});
     });
 
-
-
-    $('.content div').css('display','none');
-    $('.Super_Matematyk').css('display','block');
-    
  });
-

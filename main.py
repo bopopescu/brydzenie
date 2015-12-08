@@ -50,6 +50,36 @@ class MainPage(Handler):
 	def get(self):
 		self.render_front()	
 
+class PatriotaPage(Handler):
+	def render_front(self, error=""):
+		self.render("jak_byc_patriota.html")
+	def get(self):
+		self.render_front()
+
+class KochajmyPage(Handler):
+	def render_front(self, error=""):
+		self.render("kochajmy_sie.html")
+	def get(self):
+		self.render_front()
+
+class ZaPieknemPage(Handler):
+	def render_front(self, error=""):
+		self.render("pogon_za_pieknem.html")
+	def get(self):
+		self.render_front()
+
+class JedenDzienPage(Handler):
+	def render_front(self, error=""):
+		self.render("jeden-dzien-z-zycia-polskiej-firmy.html")
+	def get(self):
+		self.render_front()
+
+class Error404Page(Handler):
+	def render_front(self, error=""):
+		self.render("error404.html")
+	def get(self):
+		self.render_front()
+
 
 """
 class SomePage(Handler):
@@ -103,4 +133,10 @@ class CommentsHandler(Handler):
 				
 """      
         		
-app = webapp2.WSGIApplication([('/', MainPage)], debug=True) #, ('/comments', CommentsHandler)], debug=True)
+app = webapp2.WSGIApplication([('/', MainPage),
+                               ('/jak-byc-patriota', PatriotaPage),
+                               ('/kochajmy-sie', KochajmyPage),
+                               ('/pogon-za-pieknem', ZaPieknemPage),
+                               ('/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
+                               ('/error404', Error404Page),
+                               ], debug=True) #, ('/comments', CommentsHandler)], debug=True)
