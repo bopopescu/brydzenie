@@ -36,11 +36,9 @@ class Handler(webapp2.RequestHandler):
 
 
 ###DB
-class Komentarz(db.Model):
-	nick = db.StringProperty(required=True)
-	comment = db.TextProperty(required=True)
+class Emaile(db.Model):
+	email = db.EmailProperty(required=True) #StringProperty
 	created = db.DateTimeProperty(auto_now_add=True)
-	opo_id = db.StringProperty(required=True)
 
 
 ###PAGES
@@ -74,11 +72,50 @@ class JedenDzienPage(Handler):
 	def get(self):
 		self.render_front()
 
+class BiochemiaPage(Handler):
+	def render_front(self, error=""):
+		self.render("biochemia.html")
+	def get(self):
+		self.render_front()
+
+class LustroPage(Handler):
+	def render_front(self, error=""):
+		self.render("lustro.html")
+	def get(self):
+		self.render_front()
+
 class Error404Page(Handler):
 	def render_front(self, error=""):
 		self.render("error404.html")
 	def get(self):
 		self.render_front()
+
+
+### Newsletter
+class NewsletterPage(Handler):
+	def render_front(self, email="", error=""):
+		self.render("newsletter.html", email=email, error=error)
+	def get(self):
+		self.render_front()
+	def post(self):
+		email = self.request.get('email')
+	
+		#a = db.GqlQuery("select * FROM Emaile where email='sulfid@o2.pl'")
+		#b = a[0]
+		#b.delete()
+		
+		if (email):
+			e = Emaile(email=email)
+			e.put()
+			self.redirect("/newsletter/wyslany")
+			
+		else:
+			error = "Wpisz Email"
+			self.render_front(email, error)
+
+class NewsletterWyslanyPage(Handler):
+	def get(self):
+		self.render("newsletter_wyslany.html")
 
 
 """
@@ -138,5 +175,9 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/kochajmy-sie', KochajmyPage),
                                ('/pogon-za-pieknem', ZaPieknemPage),
                                ('/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
+                               ('/biochemia', BiochemiaPage),
+                               ('/lustro', LustroPage),
+                               ('/newsletter', NewsletterPage),
+                               ('/newsletter/wyslany', NewsletterWyslanyPage),
                                ('/error404', Error404Page),
                                ], debug=True) #, ('/comments', CommentsHandler)], debug=True)

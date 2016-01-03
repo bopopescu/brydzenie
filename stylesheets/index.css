@@ -132,6 +132,12 @@ span {
 	padding: 20px;
 }
 
+.error {
+    color: rgba(209, 0, 0, 1);
+	text-align: center;
+}
+
+
 .index {
    	text-indent: 0px;
 	text-align: center;
@@ -141,4 +147,9 @@ span {
 .quote {
     font-style: italic;
 	text-align: justify;
+}
+
+.newsletter {
+    padding: 100px;
+   	text-indent: 0px;
 }

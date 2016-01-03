@@ -1,0 +1,20 @@
+﻿{% extends "index.html" %}
+{% block title %}Newsletter{% endblock %}
+{% block content %}
+
+    <div class="newsletter">
+	    <p class="text_title">Newsletter</p>
+	    <p>&nbsp; </p>
+		<p>Wyślij mi swój email, aby otrzymać wiadomość, gdy tylko dodam nowe opowiadanie.</p>
+        <br>
+        <div style="text-align: center">
+            <p style="display: inline-block">Twój email:</p>
+            <form method="post" style="display: inline">
+                <input type="text" name="email" value="{{email}}"></label>
+                <input type="submit" value="Wyślij">
+            </form>
+            <p class="error"><b>{{error}}</b></p>
+        </div>
+    </div>
+    
+{% endblock %}
