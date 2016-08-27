@@ -19,7 +19,9 @@
 import webapp2
 import jinja2
 import os
+import sys
 from google.appengine.ext import db
+
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
@@ -71,7 +73,19 @@ class JedenDzienPage(Handler):
 		self.render("jeden-dzien-z-zycia-polskiej-firmy.html")
 	def get(self):
 		self.render_front()
-
+        
+class PoStudiachPage(Handler):
+	def render_front(self, error=""):
+		self.render("co-robic-po-studiach.html")
+	def get(self):
+		self.render_front()
+		
+class KotPage(Handler):
+	def render_front(self, error=""):
+		self.render("kot.html")
+	def get(self):
+		self.render_front()
+        
 class BiochemiaPage(Handler):
 	def render_front(self, error=""):
 		self.render("biochemia.html")
@@ -84,6 +98,12 @@ class LustroPage(Handler):
 	def get(self):
 		self.render_front()
 
+class OkruchyPage(Handler):
+	def render_front(self, error=""):
+		self.render("okruchy.html")
+	def get(self):
+		self.render_front()
+		
 class Error404Page(Handler):
 	def render_front(self, error=""):
 		self.render("error404.html")
@@ -117,7 +137,11 @@ class NewsletterWyslanyPage(Handler):
 	def get(self):
 		self.render("newsletter_wyslany.html")
 
-
+class BryEmailePage(Handler):
+	def get(self):
+		emaile = db.GqlQuery("SELECT * FROM Emaile ORDER BY created DESC")
+		self.render("bry_emaile.html", emaile=emaile)
+        
 """
 class SomePage(Handler):
 	def render_front(self, error="", kolor="", robic="", marzenie=""):
@@ -175,9 +199,13 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/kochajmy-sie', KochajmyPage),
                                ('/pogon-za-pieknem', ZaPieknemPage),
                                ('/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
+                               ('/co-robic-po-studiach', PoStudiachPage),
+							   ('/kot', KotPage),
                                ('/biochemia', BiochemiaPage),
                                ('/lustro', LustroPage),
+							   ('/okruchy', OkruchyPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
+                               ('/bry/emaile', BryEmailePage),
                                ('/error404', Error404Page),
                                ], debug=True) #, ('/comments', CommentsHandler)], debug=True)

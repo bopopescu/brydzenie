@@ -126,6 +126,10 @@ span {
     text-decoration: underline;
 }
 
+.year {
+    text-align: right;
+}
+
 .error404 {
     font-size: 60px;
 	text-align: center;

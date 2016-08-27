@@ -1,0 +1,15 @@
+{
+
+  "clientId": "464685945548-nrofbqcsqgljnir48tvnc21eu6e8qj22.apps.googleusercontent.com",
+
+  "projectId": "brydzenie",
+
+  "serviceAccountEmail": "",
+
+  "serviceAccountPrivateKeyFile": "/Dokumenty/google_appengine/brydzenie/brydzenie-f361a8b07a3a.p12",
+
+  "widgetUrl": "http://brydzenie.appspot.com/callback",
+
+  "cookieName": "gtoken"
+
+}
