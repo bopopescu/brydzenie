@@ -98,9 +98,9 @@ class LustroPage(Handler):
 	def get(self):
 		self.render_front()
 		
-class NieboPage(Handler):
+class NiebieskiePage(Handler):
 	def render_front(self, error=""):
-		self.render("niebo-na-ziemi.html")
+		self.render("panstwo-niebieskie.html")
 	def get(self):
 		self.render_front()
 
@@ -209,7 +209,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
 							   ('/kot', KotPage),
                                ('/biochemia', BiochemiaPage),
                                ('/lustro', LustroPage),
-							   ('/niebo-na-ziemi', NieboPage),
+							   ('/panstwo-niebieskie', NiebieskiePage),
 							   ('/okruchy', OkruchyPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
