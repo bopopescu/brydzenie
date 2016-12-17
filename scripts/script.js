@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     if ($(window).width() < 1000){
-        $('.cookies').css('display','none');
+        $('.cookies').css('display','none'); //wrzuc ciastko jedno na dole :>
         $('.bar').css('float','none');
         $('#opo').css('margin','90px 10px 100px 10px');
         //button show-navbar

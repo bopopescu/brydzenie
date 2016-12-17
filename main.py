@@ -85,6 +85,12 @@ class KotPage(Handler):
 		self.render("kot.html")
 	def get(self):
 		self.render_front()
+
+class WystepPage(Handler):
+	def render_front(self, error=""):
+		self.render("wystep-zycia.html")
+	def get(self):
+		self.render_front()
         
 class BiochemiaPage(Handler):
 	def render_front(self, error=""):
@@ -207,6 +213,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
                                ('/co-robic-po-studiach', PoStudiachPage),
 							   ('/kot', KotPage),
+							   ('/wystep-zycia', WystepPage),
                                ('/biochemia', BiochemiaPage),
                                ('/lustro', LustroPage),
 							   ('/panstwo-niebieskie', NiebieskiePage),
