@@ -91,6 +91,12 @@ class WystepPage(Handler):
 		self.render("wystep-zycia.html")
 	def get(self):
 		self.render_front()
+		
+class RufaPage(Handler):
+	def render_front(self, error=""):
+		self.render("rufa-hornety.html")
+	def get(self):
+		self.render_front()
         
 class BiochemiaPage(Handler):
 	def render_front(self, error=""):
@@ -217,6 +223,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/biochemia', BiochemiaPage),
                                ('/lustro', LustroPage),
 							   ('/panstwo-niebieskie', NiebieskiePage),
+							   ('/rufa-hornety', RufaPage),
 							   ('/okruchy', OkruchyPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
