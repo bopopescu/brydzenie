@@ -50,9 +50,15 @@ class MainPage(Handler):
 	def get(self):
 		self.render_front()	
 
-class PatriotaPage(Handler):
+class BiochemiaPage(Handler):
 	def render_front(self, error=""):
-		self.render("jak_byc_patriota.html")
+		self.render("biochemia.html")
+	def get(self):
+		self.render_front()
+
+class JedenDzienPage(Handler):
+	def render_front(self, error=""):
+		self.render("jeden-dzien-z-zycia-polskiej-firmy.html")
 	def get(self):
 		self.render_front()
 
@@ -62,45 +68,9 @@ class KochajmyPage(Handler):
 	def get(self):
 		self.render_front()
 
-class ZaPieknemPage(Handler):
-	def render_front(self, error=""):
-		self.render("pogon_za_pieknem.html")
-	def get(self):
-		self.render_front()
-
-class JedenDzienPage(Handler):
-	def render_front(self, error=""):
-		self.render("jeden-dzien-z-zycia-polskiej-firmy.html")
-	def get(self):
-		self.render_front()
-        
-class PoStudiachPage(Handler):
-	def render_front(self, error=""):
-		self.render("co-robic-po-studiach.html")
-	def get(self):
-		self.render_front()
-		
 class KotPage(Handler):
 	def render_front(self, error=""):
 		self.render("kot.html")
-	def get(self):
-		self.render_front()
-
-class WystepPage(Handler):
-	def render_front(self, error=""):
-		self.render("wystep-zycia.html")
-	def get(self):
-		self.render_front()
-		
-class RufaPage(Handler):
-	def render_front(self, error=""):
-		self.render("rufa-hornety.html")
-	def get(self):
-		self.render_front()
-        
-class BiochemiaPage(Handler):
-	def render_front(self, error=""):
-		self.render("biochemia.html")
 	def get(self):
 		self.render_front()
 
@@ -109,10 +79,46 @@ class LustroPage(Handler):
 		self.render("lustro.html")
 	def get(self):
 		self.render_front()
-		
+
 class NiebieskiePage(Handler):
 	def render_front(self, error=""):
 		self.render("panstwo-niebieskie.html")
+	def get(self):
+		self.render_front()
+
+class PatriotaPage(Handler):
+	def render_front(self, error=""):
+		self.render("jak_byc_patriota.html")
+	def get(self):
+		self.render_front()
+
+class PoStudiachPage(Handler):
+	def render_front(self, error=""):
+		self.render("co-robic-po-studiach.html")
+	def get(self):
+		self.render_front()
+
+class RufaPage(Handler):
+	def render_front(self, error=""):
+		self.render("rufa-hornety.html")
+	def get(self):
+		self.render_front()
+
+class WKosmosiePage(Handler):
+	def render_front(self, error=""):
+		self.render("sami-w-kosmosie.html")
+	def get(self):
+		self.render_front()
+		
+class WystepPage(Handler):
+	def render_front(self, error=""):
+		self.render("wystep-zycia.html")
+	def get(self):
+		self.render_front()
+
+class ZaPieknemPage(Handler):
+	def render_front(self, error=""):
+		self.render("pogon_za_pieknem.html")
 	def get(self):
 		self.render_front()
 
@@ -224,6 +230,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/lustro', LustroPage),
 							   ('/panstwo-niebieskie', NiebieskiePage),
 							   ('/rufa-hornety', RufaPage),
+							   ('/sami-w-kosmosie', WKosmosiePage),
 							   ('/okruchy', OkruchyPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
