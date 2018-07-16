@@ -20,7 +20,7 @@ body {
     top: 0px;
     position: absolute;
 }
-	
+
 .brown {
 	background-color: rgba(59, 25, 10, 0.53);
 	width: 100%;
@@ -38,12 +38,12 @@ body {
 	margin-top: 5px;
     margin-left: 50px;
 }
-	
-	
+
+
 .container {
     overflow: hidden;
-}	
-	
+}
+
 .cookies {
 	background-image: url("/stylesheets/images/cookie.png");
 	background-repeat: repeat-y;
@@ -93,7 +93,7 @@ p {
 	margin: 0px;
 }
 
-.links {	
+.links {
 	bottom: 0px;
 	color: rgba(209, 0, 0, 1);
 	font-size: 2em;
@@ -112,7 +112,7 @@ p {
 }
 
 .text_title {
-    text-align: center;
+  text-align: center;
 	font-weight: bold;
 	text-indent: 0px;
 	font-size: 1.05em;
@@ -122,8 +122,9 @@ p {
 	text-indent: 0px;
 }
 
-span {
+span, .info {
     text-decoration: underline;
+    color: rgba(59, 25, 10, 1);
 }
 
 .year {

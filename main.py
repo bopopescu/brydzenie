@@ -25,8 +25,8 @@ from google.appengine.ext import db
 
 jinja_environment = jinja2.Environment(autoescape=True,
     loader=jinja2.FileSystemLoader(os.path.join(os.path.dirname(__file__), 'templates')))
-	
-	
+
+
 class Handler(webapp2.RequestHandler):
 	def write(self, *a, **kw):
 		self.response.out.write(*a, **kw)
@@ -48,7 +48,7 @@ class MainPage(Handler):
 	def render_front(self, error=""):
 		self.render("index.html")
 	def get(self):
-		self.render_front()	
+		self.render_front()
 
 class BiochemiaPage(Handler):
 	def render_front(self, error=""):
@@ -98,6 +98,12 @@ class PoStudiachPage(Handler):
 	def get(self):
 		self.render_front()
 
+class PrawdaOZabkach(Handler):
+	def render_front(self, error=""):
+		self.render("prawda_o_zabkach.html")
+	def get(self):
+		self.render_front()
+
 class RufaPage(Handler):
 	def render_front(self, error=""):
 		self.render("rufa-hornety.html")
@@ -109,7 +115,7 @@ class WKosmosiePage(Handler):
 		self.render("sami-w-kosmosie.html")
 	def get(self):
 		self.render_front()
-		
+
 class WystepPage(Handler):
 	def render_front(self, error=""):
 		self.render("wystep-zycia.html")
@@ -127,7 +133,7 @@ class OkruchyPage(Handler):
 		self.render("okruchy.html")
 	def get(self):
 		self.render_front()
-		
+
 class Error404Page(Handler):
 	def render_front(self, error=""):
 		self.render("error404.html")
@@ -143,16 +149,16 @@ class NewsletterPage(Handler):
 		self.render_front()
 	def post(self):
 		email = self.request.get('email')
-	
+
 		#a = db.GqlQuery("select * FROM Emaile where email='sulfid@o2.pl'")
 		#b = a[0]
 		#b.delete()
-		
+
 		if (email):
 			e = Emaile(email=email)
 			e.put()
 			self.redirect("/newsletter/wyslany")
-			
+
 		else:
 			error = "Wpisz Email"
 			self.render_front(email, error)
@@ -165,7 +171,7 @@ class BryEmailePage(Handler):
 	def get(self):
 		emaile = db.GqlQuery("SELECT * FROM Emaile ORDER BY created DESC")
 		self.render("bry_emaile.html", emaile=emaile)
-        
+
 """
 class SomePage(Handler):
 	def render_front(self, error="", kolor="", robic="", marzenie=""):
@@ -176,19 +182,19 @@ class SomePage(Handler):
 		kolor = self.request.get('kolor')
 		robic = self.request.get('robic')
 		marzenie = self.request.get('marzenie')
-		
+
 		if not (kolor and robic and marzenie):
 			error = "Wypelnij porzadnie!"
 			self.render_front(error, kolor, robic, marzenie)
-	
+
 		else:
 			error = ""
 			self.redirect("/thanks")
-	
+
 class ThanksHandler(Handler):
 	def get(self):
 		self.render("2.html")
-		
+
 class AddComHandler(Handler):
 	def render_front(self, nick="", comment="", error=""):
 		self.render("3.html", nick=nick, comment=comment, error=error)
@@ -197,27 +203,27 @@ class AddComHandler(Handler):
 	def post(self):
 		nick = self.request.get('nick')
 		comment = self.request.get('comment')
-	
+
 		#a = db.GqlQuery("select * FROM Komentarz where nick='mniam'")
 		#b = a[0]
 		#b.delete()
-		
+
 		if (nick and comment):
 			com = Komentarz(nick=nick, comment=comment)
 			com.put()
 			self.redirect("/comments")
-			
+
 		else:
 			error = "Wpisz Nick i Komentarz"
 			self.render_front(nick, comment, error)
-	
+
 class CommentsHandler(Handler):
 	def get(self):
 		comments = db.GqlQuery("SELECT * FROM Komentarz ORDER BY created DESC")
 		self.render('4.html', comments=comments)
-				
-"""      
-        		
+
+"""
+
 app = webapp2.WSGIApplication([('/', MainPage),
                                ('/jak-byc-patriota', PatriotaPage),
                                ('/kochajmy-sie', KochajmyPage),
@@ -231,6 +237,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
 							   ('/panstwo-niebieskie', NiebieskiePage),
 							   ('/rufa-hornety', RufaPage),
 							   ('/sami-w-kosmosie', WKosmosiePage),
+                               ('/prawda-o-zabkach', PrawdaOZabkach),
 							   ('/okruchy', OkruchyPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
