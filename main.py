@@ -56,6 +56,24 @@ class BiochemiaPage(Handler):
 	def get(self):
 		self.render_front()
 
+class DlugieImiePage(Handler):
+	def render_front(self, error=""):
+		self.render("o-zbyt-dlugim-imieniu.html")
+	def get(self):
+		self.render_front()
+
+class FantomPage(Handler):
+	def render_front(self, error=""):
+		self.render("fantom.html")
+	def get(self):
+		self.render_front()
+
+class IgnacyPage(Handler):
+	def render_front(self, error=""):
+		self.render("samotny-ignacy.html")
+	def get(self):
+		self.render_front()
+
 class JedenDzienPage(Handler):
 	def render_front(self, error=""):
 		self.render("jeden-dzien-z-zycia-polskiej-firmy.html")
@@ -98,7 +116,7 @@ class PoStudiachPage(Handler):
 	def get(self):
 		self.render_front()
 
-class PrawdaOZabkach(Handler):
+class ZabkiPage(Handler):
 	def render_front(self, error=""):
 		self.render("prawda_o_zabkach.html")
 	def get(self):
@@ -237,7 +255,10 @@ app = webapp2.WSGIApplication([('/', MainPage),
 							   ('/panstwo-niebieskie', NiebieskiePage),
 							   ('/rufa-hornety', RufaPage),
 							   ('/sami-w-kosmosie', WKosmosiePage),
-                               ('/prawda-o-zabkach', PrawdaOZabkach),
+                               ('/prawda-o-zabkach', ZabkiPage),
+                               ('/samotny-ignacy', IgnacyPage),
+                               ('/fantom', FantomPage),
+                               ('/o-zbyt-dlugim-imieniu', DlugieImiePage),
 							   ('/okruchy', OkruchyPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
