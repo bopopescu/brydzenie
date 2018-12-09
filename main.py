@@ -116,6 +116,12 @@ class PoStudiachPage(Handler):
 	def get(self):
 		self.render_front()
 
+class SOSPage(Handler):
+	def render_front(self, error=""):
+		self.render("sos.html")
+	def get(self):
+		self.render_front()
+
 class ZabkiPage(Handler):
 	def render_front(self, error=""):
 		self.render("prawda_o_zabkach.html")
@@ -259,6 +265,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/samotny-ignacy', IgnacyPage),
                                ('/fantom', FantomPage),
                                ('/o-zbyt-dlugim-imieniu', DlugieImiePage),
+                               ('/sos', SOSPage),
 							   ('/okruchy', OkruchyPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
