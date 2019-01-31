@@ -158,6 +158,12 @@ class OkruchyPage(Handler):
 	def get(self):
 		self.render_front()
 
+class ZakalecPage(Handler):
+	def render_front(self, error=""):
+		self.render("zakalec.html")
+	def get(self):
+		self.render_front()
+
 class Error404Page(Handler):
 	def render_front(self, error=""):
 		self.render("error404.html")
@@ -267,6 +273,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/o-zbyt-dlugim-imieniu', DlugieImiePage),
                                ('/sos', SOSPage),
 							   ('/okruchy', OkruchyPage),
+                               ('/zakalec-tworczy', ZakalecPage),
                                ('/newsletter', NewsletterPage),
                                ('/newsletter/wyslany', NewsletterWyslanyPage),
                                ('/bry/emaile', BryEmailePage),
