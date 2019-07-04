@@ -68,6 +68,12 @@ class FantomPage(Handler):
 	def get(self):
 		self.render_front()
 
+class GospodarstwoPage(Handler):
+	def render_front(self, error=""):
+		self.render("moje-male-gospodarstwo.html")
+	def get(self):
+		self.render_front()
+
 class IgnacyPage(Handler):
 	def render_front(self, error=""):
 		self.render("samotny-ignacy.html")
@@ -272,6 +278,7 @@ app = webapp2.WSGIApplication([('/', MainPage),
                                ('/fantom', FantomPage),
                                ('/o-zbyt-dlugim-imieniu', DlugieImiePage),
                                ('/sos', SOSPage),
+                               ('/moje-male-gospodarstwo', GospodarstwoPage),
 							   ('/okruchy', OkruchyPage),
                                ('/zakalec-tworczy', ZakalecPage),
                                ('/newsletter', NewsletterPage),
