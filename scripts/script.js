@@ -1,5 +1,14 @@
 $(document).ready(function(){
 
+    // on reload
+    $('.opo-content').css({'display': 'none'});
+    if (typeof sessionStorage.opo_var !== 'undefined') {
+        $(sessionStorage.opo_var + " .opo-content").css({'display': 'block'});
+    } else {
+        $("#opo1 .opo-content").css({'display': 'block'});
+    };
+
+    // mobile
     if ($(window).width() < 1000){
         $('.cookies').css('display','none');
         $('.bar').css('float','none');
@@ -34,3 +43,37 @@ $(document).ready(function(){
     }
 
  });
+
+//opo-content show-hide
+$(document).on('click', '#opo1', function() {
+    $('.opo-content').css({'display': 'none'});
+    $("#opo1 .opo-content").css({'display': 'block'});
+    sessionStorage.opo_var = "#opo1";
+});
+
+$(document).on('click', '#opo2', function() {
+    $('.opo-content').css({'display': 'none'});
+    $("#opo2 .opo-content").css({'display': 'block'});
+    sessionStorage.opo_var = "#opo2";
+});
+
+$(document).on('click', '#opo3', function() {
+    $('.opo-content').css({'display': 'none'});
+    $("#opo3 .opo-content").css({'display': 'block'});
+    sessionStorage.opo_var = "#opo3";
+});
+
+$(document).on('click', '#opo4', function() {
+    $('.opo-content').css({'display': 'none'});
+    $("#opo4 .opo-content").css({'display': 'block'});
+    sessionStorage.opo_var = "#opo4";
+});
+
+$(document).on('click', '#opo5', function() {
+    $('.opo-content').css({'display': 'none'});
+    $("#opo5 .opo-content").css({'display': 'block'});
+    sessionStorage.opo_var = "#opo5";
+});
+
+// https://www.w3schools.com/html/html5_webstorage.asp
+// https://diveintohtml5.info/storage.html

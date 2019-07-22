@@ -9,11 +9,14 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-143106341-1');
+      gtag('config', 'UA-143106341-1', {
+           'custom_map': {'dimension1': 'kein_bot'}
+      });
+      gtag('event', 'bot_dimension', {'kein_bot': 'true'});
     </script>
 
         <link href="/stylesheets/index.css" rel="stylesheet" type="text/css">
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script type="text/javascript" src="/scripts/script.js"></script>
 	<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 	<title>brydzenie</title>
@@ -27,34 +30,75 @@
     </div>
     <div id="container" class="container">
         <div class="bar">
-          <p class="text"><strong>pół żartem...</strong></p>
-             <a href="/moje-male-gospodarstwo"><div class="titles"><p>Moje małe gospodarstwo</p></div></a>
-             <a href="/o-zbyt-dlugim-imieniu"><div class="titles"><p>O zbyt długim imieniu</p></div></a>
-             <a href="/samotny-ignacy"><div class="titles"><p>Samotny Ignacy</p></div></a>
-             <a href="/prawda-o-zabkach"><div class="titles"><p>Prawda o Ząbkach</p></div></a>
-		         <a href="/rufa-hornety"><div class="titles"><p>Rufa hornety</p></div></a>
-		         <a href="/wystep-zycia"><div class="titles"><p>Występ życia</p></div></a>
-		         <a href="/kot"><div class="titles"><p>Kot</p></div></a>
-             <a href="/jeden-dzien-z-zycia-polskiej-firmy"><div class="titles"><p>Jeden dzień z życia polskiej firmy</p></div></a>
-             <a href="/kochajmy-sie"><div class="titles"><p>Kochajmy się!</p></div></a>
-             <a href="/jak-byc-patriota"><div class="titles"><p>Jak być patriotą</p></div></a>
-             <a href="/pogon-za-pieknem"><div class="titles"><p>Pogoń za pięknem</p></div></a>
-             <!--<a href="/error404"><div class="titles"><p>Boski Katana zdobywa świat</p></div></a>-->
-          <p class="/text"><strong>...pół serio</strong></p>
-             <a href="/sos"><div class="titles"><p>SOS</p></div></a>
-             <a href="/fantom"><div class="titles"><p>Fantom</p></div></a>
-		         <a href="/sami-w-kosmosie"><div class="titles"><p>Sami w kosmosie</p></div></a>
-		         <a href="/panstwo-niebieskie"><div class="titles"><p>Państwo Niebieskie</p></div></a>
-		         <a href="/co-robic-po-studiach"><div class="titles"><p>Co robić po studiach?</p></div></a>
-             <!--<a href="/error404"><div class="titles"><p>Lustro</p></div></a>-->
-             <a href="/biochemia"><div class="titles"><p>Biochemia</p></div></a>
-             <br>
-		         <a href="/okruchy"><div class="titles"><p><i>Okruchy</i></p></div></a>
-             <br>
-             <a href="/zakalec-tworczy"><div class="titles"><p><i>Zakalec twórczy</i></p></div></a>
-		         <br>
-           <a href="/newsletter"><p class="text" style="font-size: 1.2em; text-decoration: underline"><strong>Newsletter</strong></p>
-           <p class="text">Otrzymaj powiadomienie o nowym wpisie</p></a>
+          <div id="opo1">
+              <div class="titles"><p>Świeże bułeczki</p></div>
+              <p class="subtitles">Czyli co upiekło się ostatnio</p></a>
+                <div class="opo-content">
+                  <span title="Pół żartem"><a href="/moje-male-gospodarstwo"><div class="titles"><p>Moje małe gospodarstwo</p></div></a></span>
+                  <span title="Pół żartem"><a href="/o-zbyt-dlugim-imieniu"><div class="titles"><p>O zbyt długim imieniu</p></div></a></span>
+                  <span title="Zakalec twórczy"><a href="/zakalec/o-etruskach"><div class="titles"><p>O Etruskach faktów kilka</p></div></a></span>
+                  <span title="Zakalec twórczy"><a href="/zakalec/obraz-swiata-wedlug-starozytnych"><div class="titles"><p>Obraz świata według starożytnych</p></div></a></span>
+                </div>
+          </div>
+          <br>
+          <div id="opo2">
+              <div class="titles"><p>Pół żartem</p></div>
+              <p class="subtitles">Czyli na słodko</p></a>
+                <div class="opo-content">
+                  <a href="/moje-male-gospodarstwo"><div class="titles"><p>Moje małe gospodarstwo</p></div></a>
+                  <a href="/o-zbyt-dlugim-imieniu"><div class="titles"><p>O zbyt długim imieniu</p></div></a>
+                  <a href="/samotny-ignacy"><div class="titles"><p>Samotny Ignacy</p></div></a>
+                  <a href="/prawda-o-zabkach"><div class="titles"><p>Prawda o Ząbkach</p></div></a>
+                  <a href="/rufa-hornety"><div class="titles"><p>Rufa hornety</p></div></a>
+                  <a href="/wystep-zycia"><div class="titles"><p>Występ życia</p></div></a>
+                  <a href="/kot"><div class="titles"><p>Kot</p></div></a>
+                  <a href="/jeden-dzien-z-zycia-polskiej-firmy"><div class="titles"><p>Jeden dzień z życia polskiej firmy</p></div></a>
+                  <a href="/kochajmy-sie"><div class="titles"><p>Kochajmy się!</p></div></a>
+                  <a href="/jak-byc-patriota"><div class="titles"><p>Jak być patriotą</p></div></a>
+                  <a href="/pogon-za-pieknem"><div class="titles"><p>Pogoń za pięknem</p></div></a>
+                  <!--<a href="/error404"><div class="titles"><p>Boski Katana zdobywa świat</p></div></a>-->
+                </div>
+          </div>
+          <br>
+          <div id="opo3">
+              <div class="titles"><p>Pół serio</p></div>
+              <p class="subtitles">Czyli keks z kamieniami</p></a>
+                <div class="opo-content">
+                  <a href="/sos"><div class="titles"><p>SOS</p></div></a>
+                  <a href="/fantom"><div class="titles"><p>Fantom</p></div></a>
+                  <a href="/sami-w-kosmosie"><div class="titles"><p>Sami w kosmosie</p></div></a>
+                  <a href="/panstwo-niebieskie"><div class="titles"><p>Państwo Niebieskie</p></div></a>
+                  <a href="/co-robic-po-studiach"><div class="titles"><p>Co robić po studiach?</p></div></a>
+                  <!--<a href="/error404"><div class="titles"><p>Lustro</p></div></a>-->
+                  <a href="/biochemia"><div class="titles"><p>Biochemia</p></div></a>
+                </div>
+          </div>
+          <br>
+          <div id="opo4">
+              <div class="titles"><p>Zakalec twórczy</p></div>
+              <p class="subtitles">Czyli recenzje i opinie</p></a>
+                <div class="opo-content">
+                  <a href="/zakalec/o-etruskach"><div class="titles"><p>O Etruskach faktów kilka</p></div></a>
+                  <a href="/zakalec/obraz-swiata-wedlug-starozytnych"><div class="titles"><p>Obraz świata według starożytnych</p></div></a>
+                  <a href="/zakalec/o-japonii"><div class="titles"><p>O szalonej i niepowtarzalnej Japonii</p></div></a>
+                  <a href="/zakalec/na-temat-terraformacji-marsa"><div class="titles"><p>Na temat terraformacji Marsa</p></div></a>
+                  <a href="/zakalec/wnioski-dotyczace-filozofii"><div class="titles"><p>Wnioski dotyczące filozofii...</p></div></a>
+                  <a href="/zakalec/recenzja-sztuki-jakobi-i-leidental"><div class="titles"><p>Recenzja sztuki "Jakobi i Leidental"...</p></div></a>
+                </div>
+          </div>
+          <br>
+          <div id="opo5">
+              <div class="titles"><p>Okruchy</p></div>
+              <p class="subtitles">Czyli krótko i lirycznie</p></a>
+                <div class="opo-content">
+                  <a href="/okruchy/2016-2018"><div class="titles"><p>2016-2018 okres dojrzały</p></div></a>
+                  <a href="/okruchy/2014-2015"><div class="titles"><p>2014-2015 okres nierozwagi</p></div></a>
+                  <a href="/okruchy/1994-2013"><div class="titles"><p>1994-2013 okres dziecinny</p></div></a>
+                </div>
+          </div>
+          <br>
+          <a href="/newsletter"><p class="bar_newsletter"><strong>Newsletter</strong></p>
+          <p class="subtitles">Otrzymaj powiadomienie o nowym wpisie</p></a>
         </div>
 
 

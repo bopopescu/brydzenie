@@ -158,17 +158,40 @@ class ZaPieknemPage(Handler):
 	def get(self):
 		self.render_front()
 
-class OkruchyPage(Handler):
-	def render_front(self, error=""):
-		self.render("okruchy.html")
-	def get(self):
-		self.render_front()
 
-class ZakalecPage(Handler):
-	def render_front(self, error=""):
-		self.render("zakalec.html")
+##### Zakalec
+class FilozofiaPage(Handler):
 	def get(self):
-		self.render_front()
+		self.render("zakalec/o-etruskach.html")
+class JakobiLeidentalPage(Handler):
+	def get(self):
+		self.render("zakalec/recenzja-sztuki-jakobi-i-leidental.html")
+class OEtruskachPage(Handler):
+	def get(self):
+		self.render("zakalec/o-etruskach.html")
+class OJaponiiPage(Handler):
+	def get(self):
+		self.render("zakalec/o-japonii.html")
+class StarozytniPage(Handler):
+	def get(self):
+		self.render("zakalec/obraz-swiata-wedlug-starozytnych.html")
+class TerraformacjaPage(Handler):
+	def get(self):
+		self.render("zakalec/na-temat-terraformacji-marsa.html")
+
+
+##### Okruchy
+class Okruchy3Page(Handler):
+	def get(self):
+		self.render("okruchy/2016-2018.html")
+class Okruchy2Page(Handler):
+	def get(self):
+		self.render("okruchy/2014-2015.html")
+class Okruchy1Page(Handler):
+	def get(self):
+		self.render("okruchy/1994-2013.html")
+
+
 
 class Error404Page(Handler):
 	def render_front(self, error=""):
@@ -207,6 +230,8 @@ class BryEmailePage(Handler):
 	def get(self):
 		emaile = db.GqlQuery("SELECT * FROM Emaile ORDER BY created DESC")
 		self.render("bry_emaile.html", emaile=emaile)
+
+
 
 """
 class SomePage(Handler):
@@ -257,32 +282,48 @@ class CommentsHandler(Handler):
 	def get(self):
 		comments = db.GqlQuery("SELECT * FROM Komentarz ORDER BY created DESC")
 		self.render('4.html', comments=comments)
-
 """
 
-app = webapp2.WSGIApplication([('/', MainPage),
-                               ('/jak-byc-patriota', PatriotaPage),
-                               ('/kochajmy-sie', KochajmyPage),
-                               ('/pogon-za-pieknem', ZaPieknemPage),
-                               ('/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
-                               ('/co-robic-po-studiach', PoStudiachPage),
-							   ('/kot', KotPage),
-							   ('/wystep-zycia', WystepPage),
-                               ('/biochemia', BiochemiaPage),
-                               ('/lustro', LustroPage),
-							   ('/panstwo-niebieskie', NiebieskiePage),
-							   ('/rufa-hornety', RufaPage),
-							   ('/sami-w-kosmosie', WKosmosiePage),
-                               ('/prawda-o-zabkach', ZabkiPage),
-                               ('/samotny-ignacy', IgnacyPage),
-                               ('/fantom', FantomPage),
-                               ('/o-zbyt-dlugim-imieniu', DlugieImiePage),
-                               ('/sos', SOSPage),
-                               ('/moje-male-gospodarstwo', GospodarstwoPage),
-							   ('/okruchy', OkruchyPage),
-                               ('/zakalec-tworczy', ZakalecPage),
-                               ('/newsletter', NewsletterPage),
-                               ('/newsletter/wyslany', NewsletterWyslanyPage),
-                               ('/bry/emaile', BryEmailePage),
-                               ('/error404', Error404Page),
-                               ], debug=True) #, ('/comments', CommentsHandler)], debug=True)
+zakalec_urls = [('/zakalec/o-etruskach', OEtruskachPage),
+                ('/zakalec/obraz-swiata-wedlug-starozytnych', StarozytniPage),
+                ('/zakalec/o-japonii', OJaponiiPage),
+                ('/zakalec/na-temat-terraformacji-marsa', TerraformacjaPage),
+                ('/zakalec/wnioski-dotyczace-filozofii', FilozofiaPage),
+                ('/zakalec/recenzja-sztuki-jakobi-i-leidental', JakobiLeidentalPage),
+                ]
+
+okruchy_urls = [('/okruchy/2016-2018', Okruchy3Page),
+                ('/okruchy/2014-2015', Okruchy2Page),
+                ('/okruchy/1994-2013', Okruchy1Page),
+                ]
+
+other_urls = [('/', MainPage),
+               ('/jak-byc-patriota', PatriotaPage),
+               ('/kochajmy-sie', KochajmyPage),
+               ('/pogon-za-pieknem', ZaPieknemPage),
+               ('/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
+               ('/co-robic-po-studiach', PoStudiachPage),
+    		   ('/kot', KotPage),
+    		   ('/wystep-zycia', WystepPage),
+               ('/biochemia', BiochemiaPage),
+               ('/lustro', LustroPage),
+    		   ('/panstwo-niebieskie', NiebieskiePage),
+    		   ('/rufa-hornety', RufaPage),
+    		   ('/sami-w-kosmosie', WKosmosiePage),
+               ('/prawda-o-zabkach', ZabkiPage),
+               ('/samotny-ignacy', IgnacyPage),
+               ('/fantom', FantomPage),
+               ('/o-zbyt-dlugim-imieniu', DlugieImiePage),
+               ('/sos', SOSPage),
+               ('/moje-male-gospodarstwo', GospodarstwoPage),
+               ('/newsletter', NewsletterPage),
+               ('/newsletter/wyslany', NewsletterWyslanyPage),
+               ('/bry/emaile', BryEmailePage),
+               ('/error404', Error404Page),
+               ] #, ('/comments', CommentsHandler)], debug=True)
+
+
+
+all_urls = zakalec_urls + okruchy_urls + other_urls
+
+app = webapp2.WSGIApplication(all_urls, debug=True)

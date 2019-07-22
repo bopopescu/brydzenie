@@ -47,7 +47,7 @@ body {
 	background-image: url("/stylesheets/images/cookie.png");
 	background-repeat: repeat-y;
 	width: 330px;
-	height: 900px; /*3 ciasteczka*/
+	height: 1205px; /*4 ciasteczka + 5px pseudo marginesu*/
   position: absolute;
 	top: 10px;
 	right: 0px;
@@ -74,27 +74,37 @@ a {
   text-decoration: none;
 }
 
-.bar p {
-	padding: 5px 5px 5px 150px;
+p {
+	font-family: Bellota, serif;
+	margin: 0px;
 }
 
-.text {
+.bar_newsletter {
+  padding: 0px 5px 0px 150px;
+	color: rgba(59, 25, 10, 1);
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+
+.subtitles {
+  padding: 0px 5px 0px 150px;
 	color: rgba(59, 25, 10, 1);
 }
 
 .titles {
+  padding: 5px 5px 5px 150px;
 	color: rgba(209, 0, 0, 1);
-	font-size: 1.2em;
-  background-color: transparent
+	font-size: 1.3em;
+  background-color: transparent;
 }
 .titles:hover {
   color: #ffffff;
-  background-color: rgba(59, 25, 10, 1)
+  background-color: rgba(59, 25, 10, 1);
 }
 
-p {
-	font-family: Bellota, serif;
-	margin: 0px;
+.opo-content {
+	font-size: 0.8em;
+  padding-left: 18px;
 }
 
 .links {
@@ -113,7 +123,15 @@ p {
   text-align: justify;
   text-indent: 60px;
 	line-height: 1.8em;
+  height: 1000px;
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
 }
+.content::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+} /* https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
 
 .text_title {
   text-align: center;
@@ -126,9 +144,12 @@ p {
 	text-indent: 0px;
 }
 
-span, .info {
+.info {
   text-decoration: underline;
   color: rgba(59, 25, 10, 1);
+}
+.span_meaning {
+  text-decoration: underline;
 }
 
 .year {
@@ -148,17 +169,17 @@ span, .info {
 
 
 .index {
-   text-indent: 0px;
+  text-indent: 0px;
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	padding: 70px;
 }
 .quote {
   font-style: italic;
 	text-align: justify;
 }
-
 .newsletter {
   padding: 100px;
   text-indent: 0px;
+  color: rgba(59, 25, 10, 1);
 }

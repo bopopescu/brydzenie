@@ -6,7 +6,7 @@ handlers:
 - url: /favicon\.ico
   static_files: favicon.ico
   upload: favicon\.ico
-  
+
 - url: /stylesheets
   static_dir: stylesheets
 
@@ -15,6 +15,7 @@ handlers:
 
 - url: .*
   script: main.app
+  secure: always
 
 libraries:
 - name: webapp2
