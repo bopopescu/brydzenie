@@ -50,119 +50,76 @@ class MainPage(Handler):
 	def get(self):
 		self.render_front()
 
-class BiochemiaPage(Handler):
-	def render_front(self, error=""):
-		self.render("biochemia.html")
-	def get(self):
-		self.render_front()
-
+##### Żartem
 class DlugieImiePage(Handler):
-	def render_front(self, error=""):
-		self.render("o-zbyt-dlugim-imieniu.html")
-	def get(self):
-		self.render_front()
-
-class FantomPage(Handler):
-	def render_front(self, error=""):
-		self.render("fantom.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/o-zbyt-dlugim-imieniu.html")
 class GospodarstwoPage(Handler):
-	def render_front(self, error=""):
-		self.render("moje-male-gospodarstwo.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/moje-male-gospodarstwo.html")
 class IgnacyPage(Handler):
-	def render_front(self, error=""):
-		self.render("samotny-ignacy.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/samotny-ignacy.html")
 class JedenDzienPage(Handler):
-	def render_front(self, error=""):
-		self.render("jeden-dzien-z-zycia-polskiej-firmy.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/jeden-dzien-z-zycia-polskiej-firmy.html")
 class KochajmyPage(Handler):
-	def render_front(self, error=""):
-		self.render("kochajmy_sie.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/kochajmy_sie.html")
 class KotPage(Handler):
-	def render_front(self, error=""):
-		self.render("kot.html")
+    def get(self):
+		self.render("zartem/kot.html")
+class MedrzecPage(Handler):
 	def get(self):
-		self.render_front()
-
-class LustroPage(Handler):
-	def render_front(self, error=""):
-		self.render("lustro.html")
-	def get(self):
-		self.render_front()
-
-class NiebieskiePage(Handler):
-	def render_front(self, error=""):
-		self.render("panstwo-niebieskie.html")
-	def get(self):
-		self.render_front()
-
+		self.render("zartem/medrzec-pemienia-chiquxiawan.html")
 class PatriotaPage(Handler):
-	def render_front(self, error=""):
-		self.render("jak_byc_patriota.html")
 	def get(self):
-		self.render_front()
-
-class PoStudiachPage(Handler):
-	def render_front(self, error=""):
-		self.render("co-robic-po-studiach.html")
-	def get(self):
-		self.render_front()
-
-class SOSPage(Handler):
-	def render_front(self, error=""):
-		self.render("sos.html")
-	def get(self):
-		self.render_front()
-
+		self.render("zartem/jak_byc_patriota.html")
 class ZabkiPage(Handler):
-	def render_front(self, error=""):
-		self.render("prawda_o_zabkach.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/prawda_o_zabkach.html")
 class RufaPage(Handler):
-	def render_front(self, error=""):
-		self.render("rufa-hornety.html")
-	def get(self):
-		self.render_front()
-
-class WKosmosiePage(Handler):
-	def render_front(self, error=""):
-		self.render("sami-w-kosmosie.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/rufa-hornety.html")
 class WystepPage(Handler):
-	def render_front(self, error=""):
-		self.render("wystep-zycia.html")
-	def get(self):
-		self.render_front()
-
+    def get(self):
+		self.render("zartem/wystep-zycia.html")
 class ZaPieknemPage(Handler):
-	def render_front(self, error=""):
-		self.render("pogon_za_pieknem.html")
+    def get(self):
+		self.render("zartem/pogon_za_pieknem.html")
+
+
+##### Serio
+class BiochemiaPage(Handler):
 	def get(self):
-		self.render_front()
+		self.render("serio/biochemia.html")
+class FantomPage(Handler):
+	def get(self):
+		self.render("serio/fantom.html")
+class LustroPage(Handler):
+    def get(self):
+		self.render("serio/lustro.html")
+class NiebieskiePage(Handler):
+    def get(self):
+		self.render("serio/panstwo-niebieskie.html")
+class PoStudiachPage(Handler):
+    def get(self):
+		self.render("serio/co-robic-po-studiach.html")
+class SOSPage(Handler):
+	def get(self):
+		self.render("serio/sos.html")
+class WKosmosiePage(Handler):
+    def get(self):
+		self.render("serio/sami-w-kosmosie.html")
 
 
 ##### Zakalec
+class BuddyzmPage(Handler):
+	def get(self):
+		self.render("zakalec/filozofia-buddyzmu.html")
 class FilozofiaPage(Handler):
 	def get(self):
-		self.render("zakalec/o-etruskach.html")
+		self.render("zakalec/wnioski-dotyczace-filozofii.html")
 class JakobiLeidentalPage(Handler):
 	def get(self):
 		self.render("zakalec/recenzja-sztuki-jakobi-i-leidental.html")
@@ -284,12 +241,36 @@ class CommentsHandler(Handler):
 		self.render('4.html', comments=comments)
 """
 
+zartem_urls = [('/zartem/jak-byc-patriota', PatriotaPage),
+                ('/zartem/kochajmy-sie', KochajmyPage),
+                ('/zartem/pogon-za-pieknem', ZaPieknemPage),
+                ('/zartem/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
+                ('/zartem/kot', KotPage),
+                ('/zartem/wystep-zycia', WystepPage),
+                ('/zartem/rufa-hornety', RufaPage),
+                ('/zartem/prawda-o-zabkach', ZabkiPage),
+                ('/zartem/samotny-ignacy', IgnacyPage),
+                ('/zartem/o-zbyt-dlugim-imieniu', DlugieImiePage),
+                ('/zartem/moje-male-gospodarstwo', GospodarstwoPage),
+                ('/zartem/medrzec-plemienia-chiquxiawan', MedrzecPage),
+                ]
+
+serio_urls = [('/serio/co-robic-po-studiach', PoStudiachPage),
+               ('/serio/biochemia', BiochemiaPage),
+               ('/serio/lustro', LustroPage),
+    		   ('/serio/panstwo-niebieskie', NiebieskiePage),
+    		   ('/serio/sami-w-kosmosie', WKosmosiePage),
+               ('/serio/fantom', FantomPage),
+               ('/serio/sos', SOSPage),
+                ]
+
 zakalec_urls = [('/zakalec/o-etruskach', OEtruskachPage),
                 ('/zakalec/obraz-swiata-wedlug-starozytnych', StarozytniPage),
                 ('/zakalec/o-japonii', OJaponiiPage),
                 ('/zakalec/na-temat-terraformacji-marsa', TerraformacjaPage),
                 ('/zakalec/wnioski-dotyczace-filozofii', FilozofiaPage),
                 ('/zakalec/recenzja-sztuki-jakobi-i-leidental', JakobiLeidentalPage),
+                ('/zakalec/na-czym-polega-filozofia-buddyzmu', BuddyzmPage),
                 ]
 
 okruchy_urls = [('/okruchy/2016-2018', Okruchy3Page),
@@ -298,25 +279,7 @@ okruchy_urls = [('/okruchy/2016-2018', Okruchy3Page),
                 ]
 
 other_urls = [('/', MainPage),
-               ('/jak-byc-patriota', PatriotaPage),
-               ('/kochajmy-sie', KochajmyPage),
-               ('/pogon-za-pieknem', ZaPieknemPage),
-               ('/jeden-dzien-z-zycia-polskiej-firmy', JedenDzienPage),
-               ('/co-robic-po-studiach', PoStudiachPage),
-    		   ('/kot', KotPage),
-    		   ('/wystep-zycia', WystepPage),
-               ('/biochemia', BiochemiaPage),
-               ('/lustro', LustroPage),
-    		   ('/panstwo-niebieskie', NiebieskiePage),
-    		   ('/rufa-hornety', RufaPage),
-    		   ('/sami-w-kosmosie', WKosmosiePage),
-               ('/prawda-o-zabkach', ZabkiPage),
-               ('/samotny-ignacy', IgnacyPage),
-               ('/fantom', FantomPage),
-               ('/o-zbyt-dlugim-imieniu', DlugieImiePage),
-               ('/sos', SOSPage),
-               ('/moje-male-gospodarstwo', GospodarstwoPage),
-               ('/newsletter', NewsletterPage),
+               ('/newsletter/zapisz', NewsletterPage),
                ('/newsletter/wyslany', NewsletterWyslanyPage),
                ('/bry/emaile', BryEmailePage),
                ('/error404', Error404Page),
@@ -324,6 +287,6 @@ other_urls = [('/', MainPage),
 
 
 
-all_urls = zakalec_urls + okruchy_urls + other_urls
+all_urls = zartem_urls + serio_urls + zakalec_urls + okruchy_urls + other_urls
 
 app = webapp2.WSGIApplication(all_urls, debug=True)

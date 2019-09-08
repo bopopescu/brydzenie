@@ -42,6 +42,11 @@ $(document).ready(function(){
         $('.header').css('margin-top','10px');
     }
 
+    if (window.location.href.match('zartem|serio|zakalec|okruchy')){
+        $('#topButton').show();
+    } else {
+        $('#topButton').hide();
+    }
  });
 
 //opo-content show-hide
@@ -77,3 +82,9 @@ $(document).on('click', '#opo5', function() {
 
 // https://www.w3schools.com/html/html5_webstorage.asp
 // https://diveintohtml5.info/storage.html
+
+
+$(document).on('click', '#topButton', function() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+});

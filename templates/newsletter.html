@@ -1,11 +1,11 @@
-﻿{% extends "index.html" %}
+{% extends "index.html" %}
 {% block title %}Newsletter{% endblock %}
 {% block content %}
 
     <div class="newsletter">
 	    <p class="text_title">Newsletter</p>
 	    <p>&nbsp; </p>
-		<p>Wyślij mi swój email, aby otrzymać wiadomość, gdy tylko dodam nowe opowiadanie.</p>
+		<p>Wyślij mi swój email, aby otrzymać wiadomość, gdy tylko dodam nowe opowiadanie albo recenzję.</p>
         <br>
         <div style="text-align: center">
             <p style="display: inline-block">Twój email:</p>
@@ -15,6 +15,9 @@
             </form>
             <p class="error"><b>{{error}}</b></p>
         </div>
+        <br>
+        <p>Dlaczego warto się zapisać?</p>
+        <p>Ponieważ wrzucam coś raz na kwartał :)</p>
     </div>
-    
+
 {% endblock %}

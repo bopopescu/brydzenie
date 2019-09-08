@@ -4,12 +4,13 @@
  @font-face { font-family: Bellota; src: url('Bellota-Regular.otf');}
 
 html {
-  height: 100%;
+  /*height: auto;*/
 }
 
 body {
 	background-image: url("/stylesheets/images/yellow_bg.png");
 	background-repeat: repeat;
+  /*height: auto;*/
 }
 
 .orange {
@@ -123,15 +124,24 @@ p {
   text-align: justify;
   text-indent: 60px;
 	line-height: 1.8em;
+}
+/* .content {
+	font-weight: bold;
+	vertical-align: top;
+	margin: 90px 340px 100px 400px;
+  text-align: justify;
+  text-indent: 60px;
+	line-height: 1.8em;
   height: 1000px;
   overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* IE 10+ */
+  scrollbar-width: none; Firefox
+  -ms-overflow-style: none; IE
 }
-.content::-webkit-scrollbar { /* WebKit */
+.content::-webkit-scrollbar { Webkit
     width: 0;
     height: 0;
-} /* https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
+} */
+/* https://stackoverflow.com/questions/16670931/hide-scroll-bar-but-while-still-being-able-to-scroll */
 
 .text_title {
   text-align: center;
@@ -182,4 +192,23 @@ p {
   padding: 100px;
   text-indent: 0px;
   color: rgba(59, 25, 10, 1);
+}
+
+
+#topButton {
+  position: relative;
+  bottom: 40px;
+  left: 50%;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: rgba(59, 25, 10, 0.73);
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+#topButton:hover {
+  background-color: rgba(240, 85, 0, 0.79);
 }
