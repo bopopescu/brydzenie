@@ -29,6 +29,8 @@ $(document).ready(function(){
         img2.style.display = 'block';
         img2.style.margin = 'auto';
         document.getElementById('container').appendChild(img2);
+        //images in opo text
+        $('#opoimg').css({'width': '90%', 'text-indent': '0px'});
     }
     //navbar show-hide
     $("#button").click(function() {

@@ -166,6 +166,11 @@ p {
   text-align: right;
 }
 
+#opoimg {
+  padding: 5px;
+}
+
+
 .error404 {
   font-size: 60px;
 	text-align: center;
