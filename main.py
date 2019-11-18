@@ -120,6 +120,9 @@ class WKosmosiePage(Handler):
 class BuddyzmPage(Handler):
 	def get(self):
 		self.render("zakalec/filozofia-buddyzmu.html")
+class DyplomacjaPage(Handler):
+	def get(self):
+		self.render("zakalec/recenzja-dyplomacji-kissingera.html")
 class FilozofiaPage(Handler):
 	def get(self):
 		self.render("zakalec/wnioski-dotyczace-filozofii.html")
@@ -275,6 +278,7 @@ zakalec_urls = [('/zakalec/o-etruskach', OEtruskachPage),
                 ('/zakalec/wnioski-dotyczace-filozofii', FilozofiaPage),
                 ('/zakalec/recenzja-sztuki-jakobi-i-leidental', JakobiLeidentalPage),
                 ('/zakalec/na-czym-polega-filozofia-buddyzmu', BuddyzmPage),
+                ('/zakalec/recenzja-dyplomacji-kissingera', DyplomacjaPage),
                 ]
 
 okruchy_urls = [('/okruchy/2016-2018', Okruchy3Page),
