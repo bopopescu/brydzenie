@@ -72,6 +72,9 @@ class KotPage(Handler):
 class MedrzecPage(Handler):
 	def get(self):
 		self.render("zartem/medrzec-pemienia-chiquxiawan.html")
+class NiesmiertelnyPage(Handler):
+	def get(self):
+		self.render("zartem/niesmiertelny.html")
 class PatriotaPage(Handler):
 	def get(self):
 		self.render("zartem/jak_byc_patriota.html")
@@ -259,6 +262,7 @@ zartem_urls = [('/zartem/jak-byc-patriota', PatriotaPage),
                 ('/zartem/o-zbyt-dlugim-imieniu', DlugieImiePage),
                 ('/zartem/moje-male-gospodarstwo', GospodarstwoPage),
                 ('/zartem/medrzec-plemienia-chiquxiawan', MedrzecPage),
+                ('/zartem/niesmiertelny', NiesmiertelnyPage),
                 ('/zartem/statystyka-bogini-racjonalistow', StatystykaPage)
                 ]
 
