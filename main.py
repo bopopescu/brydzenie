@@ -165,6 +165,9 @@ class Error404Page(Handler):
 	def get(self):
 		self.render_front()
 
+class OAutorze(Handler):
+	def get(self):
+		self.render("o-autorze.html")
 
 ### Newsletter
 class NewsletterPage(Handler):
@@ -295,6 +298,7 @@ other_urls = [('/', MainPage),
                ('/newsletter/wyslany', NewsletterWyslanyPage),
                ('/bry/emaile', BryEmailePage),
                ('/error404', Error404Page),
+               ('/o-autorze', OAutorze),
                ] #, ('/comments', CommentsHandler)], debug=True)
 
 
