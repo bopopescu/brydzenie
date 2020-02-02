@@ -105,6 +105,9 @@ class FantomPage(Handler):
 class LustroPage(Handler):
     def get(self):
 		self.render("serio/lustro.html")
+class Marsjanie1Page(Handler):
+    def get(self):
+		self.render("serio/marsjanie-cz1.html")
 class NiebieskiePage(Handler):
     def get(self):
 		self.render("serio/panstwo-niebieskie.html")
@@ -272,6 +275,7 @@ zartem_urls = [('/zartem/jak-byc-patriota', PatriotaPage),
 serio_urls = [('/serio/co-robic-po-studiach', PoStudiachPage),
                ('/serio/biochemia', BiochemiaPage),
                ('/serio/lustro', LustroPage),
+               ('/serio/marsjanie-cz1', Marsjanie1Page),
     		   ('/serio/panstwo-niebieskie', NiebieskiePage),
     		   ('/serio/sami-w-kosmosie', WKosmosiePage),
                ('/serio/fantom', FantomPage),
