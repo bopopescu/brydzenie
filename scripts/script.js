@@ -7,6 +7,17 @@ $(document).ready(function(){
     } else {
         $("#opo1 .opo-content").css({'display': 'block'});
     };
+    // zakladka on revisit
+    if ((typeof localStorage.page_var !== 'undefined') && (typeof localStorage.height_var !== 'undefined')) {
+      if (localStorage.page_var == window.location.pathname) {
+        window.scrollTo(0,localStorage.height_var);
+      }
+      if (window.location.pathname == '/') {
+        document.getElementById("teraz_czytasz").innerHTML = "Teraz czytasz: " + localStorage.page_var;
+        document.getElementById("teraz_czytasz").href = 'https://brydzenie.appspot.com' + localStorage.page_var;
+      }
+    };
+
 
     // mobile
     if ($(window).width() < 1000){
@@ -23,6 +34,11 @@ $(document).ready(function(){
         img.style.top = 12 + 'px';
         img.style.right = 10 + 'px';
         document.getElementById('navbar').appendChild(img);
+        // zakladka
+        $('.zakladka').css({'right': '0px', 'top': '150px', 'font-size': '40px'});
+        $('.arrow-left').css({'border-top': '20px solid transparent',
+                              'border-bottom': '20px solid transparent',
+                              'border-right': '20px solid orange'});
         // zamiast z boku wrzuc jedno ciastko na dole :>
         var img2 = new Image(330,300);
         img2.src = '../stylesheets/images/cookie.png';
@@ -46,8 +62,10 @@ $(document).ready(function(){
 
     if (window.location.href.match('zartem|serio|zakalec|okruchy')){
         $('#topButton').show();
+        $('#zakladka').show();
     } else {
         $('#topButton').hide();
+        $('#zakladka').hide();
     }
  });
 
@@ -85,6 +103,15 @@ $(document).on('click', '#opo5', function() {
 // https://www.w3schools.com/html/html5_webstorage.asp
 // https://diveintohtml5.info/storage.html
 
+//zakladka - save position
+$(document).on('click', '#zakladka', function() {
+    localStorage.page_var = window.location.pathname;
+    localStorage.height_var = window.pageYOffset;
+    //dymek - zapisane!
+    $('#alarmmsg').css({'top': '30px', 'right': '30px'}).show();
+    setTimeout(function(){ $('#alarmmsg').hide(); }, 2000);
+});
+// https://javascript.info/size-and-scroll-window
 
 $(document).on('click', '#topButton', function() {
     document.body.scrollTop = 0;

@@ -116,13 +116,21 @@
            <div class="index">
                <p>Witaj na stronie Brydzi!</p><br>
                <p>Znajdziesz tu tylko ciastka i słowa. To znaczy niczym nieskrępowaną twórczość literacką wolną od mody, krytyków i opłacalności wydawniczej.</p><br>
-               <p>Zapraszam na smaczne, krótkie opowiadania oraz do zapisania się na <a href="/newsletter/zapisz">newsletter</a>.</p><br><br>
+               <p>Zapraszam na smaczne, krótkie opowiadania oraz do zapisania się na <a href="/newsletter/zapisz">newsletter</a>.</p><br>
+               <a id="teraz_czytasz" href=""></a><br><br>
+               <p style="font-size: 0.9em">Opowiadanie jest strasznie długie? <span style='color: white'>Wdrożyłam wam ZAKŁADKĘ</span> - kliknij w nią tam, gdzie skończyłeś czytać wybrane opowiadanie, a przy kolejnej wizycie, otworzy się w zapisanym miejscu. Pamiętaj, aby korzystać na tym samym urządzeniu i przeglądarce - nie ma cudów :)</p><br>
+               <img id='opoimg' src='/stylesheets/images/zakladka.png'/>
+               <br><br><br>
                <p>Dla ciekawskich sekcja <a href="/o-autorze">o autorze</a>.</p><br><br><br>
                <p style="font-size: 0.9em;">Strona wykorzystuje ciastka wyłącznie w celach dekoracyjnych, nigdy jako pamięć przeglądarkowa.</p>
            </div>
            {% endblock %}
         </div>
 
+        <div id="zakladka" class="zakladka">
+          <div class="arrow-left"></div>
+          Zakładka
+        </div>
 
         <div class="cookies"></div>
 
@@ -133,6 +141,6 @@
         <p><a href="jak-byc-patriota" class="zostaw-slad">Zostaw po sobie ślad!</a></p>
     </div>
     -->
-
+    <div id="alarmmsg">zapisane!</div>
 </body>
 </html>

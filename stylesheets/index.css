@@ -187,7 +187,7 @@ p {
   text-indent: 0px;
 	text-align: center;
 	font-size: 1.2em;
-	padding: 80px;
+	padding: 40px;
 }
 .quote {
   font-style: italic;
@@ -220,4 +220,48 @@ p {
 }
 #topButton:hover {
   background-color: rgba(240, 85, 0, 0.79);
+}
+
+.zakladka {
+  position: fixed;
+  top: 90px;
+  right: 300px;
+  z-index: 99;
+  padding: 0px 10px 5px 10px;
+  border-radius: 40px 0px 0px 40px;
+  border: none;
+  outline: none;
+  background-color: rgba(59, 25, 10, 0.73);
+  color: white;
+  cursor: pointer;
+  font-family: Bellota, serif;
+  font-size: 18px;
+  font-weight: bold;
+}
+.arrow-left {
+	display: inline-block;
+    position: relative;
+    margin-right: 5px;
+    top: 5px;
+    width: 0px;
+    height: 0px;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 12px solid orange;
+}
+
+#alarmmsg {
+   display: none;
+   padding: 40px;
+   border-radius: 15px;
+   position: fixed;
+   background-color: white;
+   font-family: Arial;
+   font-size: 1.5em;
+}
+
+
+#teraz_czytasz {
+  color: rgba(209, 0, 0, 1);
+  font-family: Bellota, serif;
 }
