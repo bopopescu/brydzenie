@@ -33,7 +33,7 @@ class Upgrade(base.Command):
         help='The kubernetes release version to change the cluster to.'
         ' Omit to upgrade to the latest version offered by the server.')
     parser.add_argument(
-        '--master',
+        '--main',
         help=argparse.SUPPRESS,
         action='store_true')
     parser.add_argument(
@@ -65,8 +65,8 @@ class Upgrade(base.Command):
 
     options = api_adapter.UpdateClusterOptions(
         version=args.cluster_version,
-        update_master=args.master,
-        update_nodes=(not args.master))
+        update_main=args.main,
+        update_nodes=(not args.main))
 
     try:
       op_ref = adapter.UpdateCluster(cluster_ref, options)

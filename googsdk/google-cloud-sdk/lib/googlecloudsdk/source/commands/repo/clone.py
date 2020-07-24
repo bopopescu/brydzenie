@@ -28,7 +28,7 @@ class Clone(base.Command):
           this `{command}` will clone the Google-hosted git repository
           associated with PROJECT. This repository will automatically be
           connected to Google, and it will use the credentials indicated as
-          _active_ by `gcloud auth list`. Pushing to the origin's _master_
+          _active_ by `gcloud auth list`. Pushing to the origin's _main_
           branch will trigger an App Engine deployment using the contents
           of that branch.
       """,
@@ -41,7 +41,7 @@ class Clone(base.Command):
             $ cd REPOSITORY_NAME
             $ git pull
               https://github.com/GoogleCloudPlatform/appengine-helloworld-python
-            $ git push origin master
+            $ git push origin main
       """),
   }
 
